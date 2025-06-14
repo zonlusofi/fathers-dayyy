@@ -1,52 +1,26 @@
-body {
-  margin: 0;
-  padding: 0;
-  background-color: #FFFDE7; /* light yellow */
-  font-family: 'Poppins', sans-serif;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  flex-direction: column;
-}
-
-.wrapper {
-  text-align: center;
-  padding: 20px;
-}
-
 .letter {
-  background-color: #FFFCEA; /* tinted white/yellow */
-  border: 4px solid #FFEB3B; /* bright yellow frame */
-  padding: 30px;
-  border-radius: 12px;
-  max-width: 500px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  position: relative;
+  background-color: #FFFCEA; /* paper color */
+  width: 340px;
+  height: 500px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); /* soft shadow only */
   margin-bottom: 30px;
-}
-
-.letter h1 {
-  color: #FBC02D;
-}
-
-.letter p {
-  font-size: 1.1rem;
-  color: #333;
-  line-height: 1.6;
-}
-
-.photo-frame {
+  padding: 30px;
   display: flex;
-  gap: 15px;
-  justify-content: center;
-  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 0; /* no rounded corners */
+  border: none; /* NO frame */
 }
 
-.photo-frame img {
-  width: 120px;
-  height: 120px;
-  object-fit: cover;
-  border: 4px solid #FFEB3B;
-  border-radius: 8px;
-  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1);
+/* folded corner */
+.letter::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, #FFFCEA 50%, #f3f3a1 50%);
+  clip-path: polygon(100% 0, 0 100%, 100% 100%);
 }
